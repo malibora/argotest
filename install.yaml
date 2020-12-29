@@ -2652,6 +2652,9 @@ spec:
       - configMap:
           name: argocd-tls-certs-cm
         name: tls-certs
+      - configMap:
+          name: argocd-cm
+        name: argocd
 ---
 apiVersion: apps/v1
 kind: StatefulSet
