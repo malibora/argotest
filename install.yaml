@@ -2239,7 +2239,7 @@ metadata:
     app.kubernetes.io/part-of: argocd
   name: argocd-cm
 data:
-  ui.cssurl: "https://github.com/malibora/argotest/my-styles.css"
+  ui.cssurl: "https://raw.githubusercontent.com/malibora/argotest/master/my-styles.css"
 ---
 apiVersion: v1
 kind: ConfigMap
