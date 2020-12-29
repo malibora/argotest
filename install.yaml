@@ -2650,9 +2650,7 @@ spec:
           name: argocd-ssh-known-hosts-cm
         name: ssh-known-hosts
       - configMap:
-          name: argocd-tls-certs-cm      
-      - configMap:
-          name: argocd-cm
+          name: argocd-tls-certs-cm
         name: tls-certs
 ---
 apiVersion: apps/v1
