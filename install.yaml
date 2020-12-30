@@ -2239,7 +2239,25 @@ metadata:
     app.kubernetes.io/part-of: argocd
   name: argocd-cm
 data:
-  ui.cssurl: https://raw.githubusercontent.com/malibora/argotest/master/my-styles.css
+  ui.cssurl: "./custom/my-styles.css"
+  ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    app.kubernetes.io/name: argocd-styles-cm
+    app.kubernetes.io/part-of: argocd
+  name: argocd-styles-cm
+data:
+  my-styles.css: |
+    body {
+
+        background-color: black;
+        color: #123456;
+      }
+    .nav-bar {
+      background-color: black;
+      color: #123456;
+    }
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -2642,6 +2660,8 @@ spec:
           name: ssh-known-hosts
         - mountPath: /app/config/tls
           name: tls-certs
+        - mountPath: /shared/app/custom
+          name: styles
       serviceAccountName: argocd-server
       volumes:
       - emptyDir: {}
@@ -2652,6 +2672,9 @@ spec:
       - configMap:
           name: argocd-tls-certs-cm
         name: tls-certs
+      - configMap:
+          name: argocd-styles-cm
+        name: styles
 ---
 apiVersion: apps/v1
 kind: StatefulSet
