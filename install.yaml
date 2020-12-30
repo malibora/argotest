@@ -2240,7 +2240,7 @@ metadata:
   name: argocd-cm
 data:
   ui.cssurl: "./custom/my-styles.css"
-  ---
+---
 apiVersion: v1
 kind: ConfigMap
 metadata:
