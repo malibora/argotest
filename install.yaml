@@ -2642,8 +2642,6 @@ spec:
           name: ssh-known-hosts
         - mountPath: /app/config/tls
           name: tls-certs
-        - mountPath: /app/config/argocd
-          name: argocd
       serviceAccountName: argocd-server
       volumes:
       - emptyDir: {}
@@ -2654,9 +2652,6 @@ spec:
       - configMap:
           name: argocd-tls-certs-cm
         name: tls-certs
-      - configMap:
-          name: argocd-cm
-        name: argocd
 ---
 apiVersion: apps/v1
 kind: StatefulSet
