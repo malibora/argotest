@@ -2249,11 +2249,6 @@ metadata:
   name: argocd-styles-cm
 data:
   my-styles.css: |
-    body {
-
-        background-color: black;
-        color: #123456;
-      }
     .nav-bar {
       background-color: black;
       color: #123456;
@@ -2660,7 +2655,7 @@ spec:
           name: ssh-known-hosts
         - mountPath: /app/config/tls
           name: tls-certs
-        - mountPath: /shared/app/custom
+        - mountPath: /app/custom
           name: styles
       serviceAccountName: argocd-server
       volumes:
