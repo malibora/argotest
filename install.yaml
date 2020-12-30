@@ -2244,6 +2244,7 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
+  labels:
     app.kubernetes.io/name: argocd-styles-cm
     app.kubernetes.io/part-of: argocd
   name: argocd-styles-cm
